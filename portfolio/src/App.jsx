@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ChatBot from "./components/ChatBot";
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -54,6 +55,7 @@ function App() {
       <Router>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <AnimatedRoutes />
+        <ChatBot />
         <Footer />
       </Router>
     </div>

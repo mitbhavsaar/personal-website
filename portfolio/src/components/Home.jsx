@@ -11,7 +11,7 @@ function Home() {
     const typed = new Typed(el.current, {
       strings: [
         "MIT BHAVSAR",
-        "Odoo Developer (Beginner)",
+        "Odoo Developer",
         "Python & ERP Learner",
         "Exploring Odoo Customization",
       ],

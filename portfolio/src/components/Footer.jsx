@@ -9,10 +9,10 @@ function Footer() {
           © {new Date().getFullYear()} Mit Bhavsar. All Rights Reserved.
         </p>
         <div className="flex gap-4 mt-4 lg:mt-0">
-          <a href="https://wa.me/your-number" target="_blank" rel="noreferrer">
+          <a href="https://wa.me/7874221860" target="_blank" rel="noreferrer">
             <FaWhatsapp className="text-green-500 hover:scale-110" size={28} />
           </a>
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com/in/mit-bhavsar" target="_blank" rel="noreferrer">
             <FaLinkedin className="text-blue-500 hover:scale-110" size={28} />
           </a>
           <a href="https://instagram.com/your-profile" target="_blank" rel="noreferrer">

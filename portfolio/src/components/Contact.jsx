@@ -5,11 +5,27 @@ function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Form Submitted: " + JSON.stringify(formData));
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        alert("✅ Message Sent & Saved to DB!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("❌ Error: " + data.error);
+      }
+    } catch (err) {
+      alert("Server Error: " + err.message);
+    }
   };
+
 
   return (
     <div className="container mx-auto min-h-screen px-6 py-12">
