@@ -45,7 +45,9 @@ const appendToSheet = async (data) => {
     console.log('Successfully added to Google Sheet');
   } catch (error) {
     console.error('Error adding to Google Sheet:', error.message);
-    // Do not throw, so we don't block the main response if sheets fails
+    if (error.response && error.response.data) {
+      console.error('Details:', JSON.stringify(error.response.data, null, 2));
+    }
   }
 };
 

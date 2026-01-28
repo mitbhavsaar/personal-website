@@ -8,7 +8,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -16,13 +16,12 @@ function Contact() {
 
       const data = await res.json();
       if (data.success) {
-        alert("✅ Message Sent & Saved to DB!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("❌ Error: " + data.error);
+        console.error("Error: " + data.error);
       }
     } catch (err) {
-      alert("Server Error: " + err.message);
+      console.error("Server Error: " + err.message);
     }
   };
 
