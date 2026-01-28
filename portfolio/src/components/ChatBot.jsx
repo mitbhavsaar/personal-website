@@ -34,14 +34,18 @@ const ChatBot = () => {
                 body: JSON.stringify({ messages: [...messages, userMessage] }),
             });
 
-            const data = await response.json();
-            if (data.error) {
-                setMessages((prev) => [...prev, { role: "assistant", content: "I'm having a little trouble connecting. Please check if the GEMINI_API_KEY is set correctly." }]);
-            } else {
-                setMessages((prev) => [...prev, { role: "assistant", content: data.content }]);
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Chat API Error:", errorData);
+                throw new Error(errorData.error || "Failed to connect to AI");
             }
+
+            const data = await response.json();
+            // Using data.reply to match updated controller
+            setMessages((prev) => [...prev, { role: "assistant", content: data.reply || data.content }]);
         } catch (error) {
-            setMessages((prev) => [...prev, { role: "assistant", content: "Oops! Something went wrong. Please try again later." }]);
+            console.error("Chatbot frontend error:", error);
+            setMessages((prev) => [...prev, { role: "assistant", content: "I'm having a little trouble connecting. Please check if the server is running and the API key is valid." }]);
         } finally {
             setIsLoading(false);
         }
