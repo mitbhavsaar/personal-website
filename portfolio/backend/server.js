@@ -18,11 +18,11 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB connection error:", err.message));
 
-// Serving Static Files from React build
-app.use(express.static(path.join(__dirname, "../dist")));
-
 app.use("/api/contact", contactRoutes);
 app.use("/api/chat", chatRoutes);
+
+// Serving Static Files from React build
+app.use(express.static(path.join(__dirname, "../dist")));
 
 // Catch-all route to serve React's index.html
 app.get(/.*/, (req, res) => {

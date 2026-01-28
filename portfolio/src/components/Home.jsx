@@ -53,7 +53,7 @@ function Home() {
       >
         <div className="relative w-60 h-60 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
           <img
-            src="/src/assets/images/mit.png"
+            src="/assets/images/mit.png"
             alt="Developer"
             className="w-full h-full object-contain"
           />

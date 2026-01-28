@@ -41,7 +41,7 @@ const Projects = () => {
       title: "Clinic Management App (Community)",
       description:
         "Comprehensive clinic management system in Odoo 17 with patient records, appointments, billing, and streamlined healthcare workflows.",
-      imageUrl: "/src/assets/Projects/project1.png",
+      imageUrl: "/assets/Projects/project1.png",
       technology: "Odoo 17, Python, XML (QWeb), PostgreSQL, Report Customization",
       githubUrl: "https://github.com/mitbhavsaar/clinic-Management-App",
     },
@@ -49,7 +49,7 @@ const Projects = () => {
       title: "Smart Voice Chatter (Enterprise)",
       description:
         "Integrated voice note recording and playback in Odoo 18 Chatter, enabling seamless audio communication, collaboration, and efficient user interactions.",
-      imageUrl: "/src/assets/Projects/project2.png",
+      imageUrl: "/assets/Projects/project2.png",
       technology: "Odoo 18, Python, JavaScript, OWL, MediaRecorder API, ffmpeg, QWeb",
       githubUrl: "https://github.com/mitbhavsaar/smart-voice-chatter",
     },
@@ -57,7 +57,7 @@ const Projects = () => {
       title: "Real-time POS Analytics Dashboard (Enterprise)",
       description:
         "Built real-time POS analytics dashboard in Odoo 18 with live sales, KPIs, and interactive charts for smarter business insights.",
-      imageUrl: "/src/assets/Projects/project3.png",
+      imageUrl: "/assets/Projects/project3.png",
       technology: "Odoo 18, Python, JavaScript, OWL, Chart.js, XML (QWeb), PostgreSQL",
       githubUrl: "https://github.com/mitbhavsaar",
     },
@@ -65,7 +65,7 @@ const Projects = () => {
       title: "SmartShop Voice & Product History (Enterprise)",
       description:
         "Developed SmartShop Odoo module with voice search, add-to-cart, view history, and purchased ribbon for enhanced eCommerce experience.",
-      imageUrl: "/src/assets/Projects/project3.png",
+      imageUrl: "/assets/Projects/project3.png",
       technology:
         "Odoo 18, Python, JavaScript, OWL, SpeechRecognition API, XML (QWeb), Controllers, PostgreSQL",
       githubUrl: "https://github.com/mitbhavsaar",

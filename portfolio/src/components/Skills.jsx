@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 function Skills() {
   const skills = [
-    { title: "JavaScript", image: "/src/assets/Skills/javascript.png" },
-    { title: "React", image: "/src/assets/Skills/react.png" },
-    { title: "HTML", image: "/src/assets/Skills/HTML.png" },
-    { title: "CSS", image: "/src/assets/Skills/CSS.png" },
-    { title: "Bootstrap", image: "/src/assets/Skills/bootstrap.png" },
-    { title: "Python", image: "/src/assets/Skills/python.png" },
-    { title: "TailwindCSS", image: "/src/assets/Skills/tailwindcss.png" },
-    { title: "Odoo", image: "/src/assets/Skills/odoo.png" },
+    { title: "JavaScript", image: "/assets/Skills/javascript.png" },
+    { title: "React", image: "/assets/Skills/react.png" },
+    { title: "HTML", image: "/assets/Skills/HTML.png" },
+    { title: "CSS", image: "/assets/Skills/CSS.png" },
+    { title: "Bootstrap", image: "/assets/Skills/bootstrap.png" },
+    { title: "Python", image: "/assets/Skills/python.png" },
+    { title: "TailwindCSS", image: "/assets/Skills/tailwindcss.png" },
+    { title: "Odoo", image: "/assets/Skills/odoo.png" },
   ];
 
   return (
