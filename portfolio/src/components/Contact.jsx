@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 
 function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -17,11 +19,16 @@ function Contact() {
       const data = await res.json();
       if (data.success) {
         setFormData({ name: "", email: "", message: "" });
+        alert("Message sent successfully!");
       } else {
         console.error("Error: " + data.error);
+        alert("Failed to send message: " + data.error);
       }
     } catch (err) {
       console.error("Server Error: " + err.message);
+      alert("Server error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -47,8 +54,11 @@ function Contact() {
           onChange={handleChange} required className="w-full p-3 mb-4 border rounded text-black" />
         <textarea name="message" placeholder="Your Message" value={formData.message}
           onChange={handleChange} rows="4" required className="w-full p-3 mb-4 border rounded text-black" />
-        <button className="w-full border-2 border-yellow-500 py-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition">
-          Send Message
+        <button
+          disabled={isSubmitting}
+          className="w-full border-2 border-yellow-500 py-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition disabled:opacity-50"
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </motion.form>
     </div>
