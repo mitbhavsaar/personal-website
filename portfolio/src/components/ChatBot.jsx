@@ -45,7 +45,7 @@ const ChatBot = () => {
             setMessages((prev) => [...prev, { role: "assistant", content: data.reply || data.content }]);
         } catch (error) {
             console.error("Chatbot frontend error:", error);
-            setMessages((prev) => [...prev, { role: "assistant", content: "I'm having a little trouble connecting. Please check if the server is running and the API key is valid." }]);
+            setMessages((prev) => [...prev, { role: "assistant", content: `Connection error: ${error.message}. Please check if the backend is running and the API key is set in Render environment variables.` }]);
         } finally {
             setIsLoading(false);
         }

@@ -29,8 +29,12 @@ const chat = async (req, res) => {
 
         res.json({ reply: text });
     } catch (error) {
-        console.error("Gemini AI Error:", error);
-        res.status(500).json({ error: "Failed to generate response from AI." });
+        console.error("Gemini AI Error Detailed:", {
+            message: error.message,
+            stack: error.stack,
+            cause: error.cause
+        });
+        res.status(500).json({ error: `AI Error: ${error.message}` });
     }
 };
 
