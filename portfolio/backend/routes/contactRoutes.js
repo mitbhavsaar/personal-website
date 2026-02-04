@@ -16,10 +16,10 @@ router.post("/", async (req, res) => {
       // We continue because we want the Google Sheet to work even if DB is down
     }
 
-    // Append to Google Sheet (Async)
+    // Append to Google Sheet (Await)
     try {
       const { appendToSheet } = require("../utils/googleSheets");
-      appendToSheet({ name, email, message }); // No await here
+      await appendToSheet({ name, email, message });
     } catch (sheetErr) {
       console.error("❌ Google Sheets Error:", sheetErr.message);
     }
